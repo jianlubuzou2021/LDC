@@ -281,7 +281,8 @@ namespace LDC
             ReadLines(true);
             P.StandardInput.WriteLine(string.Format("adb -s {0} shell tar -xvf /sdcard/Download/sp.tar -C /", EmulatorName));
             ReadLines(true);
-            Actions.UpdateFileState(bind.FP, "数据导入结束！");
+            string p = ReadPhoneNumber();
+            Actions.UpdateFileState(bind.FP, p);
             Thread.Sleep(100);
             Debug.WriteLine(string.Format("{0} - {1} - {2}", EmulatorName, ListPosition, bind));
         }
